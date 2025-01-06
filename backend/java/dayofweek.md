@@ -7,7 +7,8 @@ LocalDate 객체의 메서드, 날짜의 요일을 DayOfWeek 열거형(enum)으�
   -> WEDNESDAY 반환
 ```
 ### ex) DayOfWeek method를 이용하여 건강기능식품 섭취 요일에 따라 record list 반환하기
-   - 등록된 섭취 식품 목록 테이블 (FunctionalFoodIntakeList)에서 intakeFrequency 컬럼은 'Mon,Tue' 등의 , 로 구분된 string 형태로 저장된 상태
+   - 등록된 섭취 식품 목록 테이블 (FunctionalFoodIntakeList)에서 intakeFrequency 컬럼은 'Mon,Tue' 등의 , 로 구분된 <br/>
+     string 형태로 저장된 상태
    - 섭취 식품 목록을 조회하는 날짜를 받아서 요일로 변환하여 변수에 담고 요일 비교 메서드를 만들기
 
      ```xml
