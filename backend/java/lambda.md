@@ -42,6 +42,6 @@ ex) 인스턴스 메서드 참조
  functionalFoodEntity.ifPresent(functionalFoodIntakeEntity::setFunctionalFood);
 ```
 ```xml
-ex)  특정 객체 메서드 참조 - 여기서 this는 이 클래스, 즉 functionalFoodService를 뜻한다.
+ex) 특정 객체 메서드 참조 - 여기서 this는 이 클래스, 즉 functionalFoodService를 뜻한다.
 .forEach(this::deleteFunctionalFoodRecord);
 ```
