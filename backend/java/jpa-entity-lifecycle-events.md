@@ -17,6 +17,9 @@ JPA에서 entity를 관리하기 위해 entityManager가 제공하는 일종의 
 변경감지 (Dirty Checking) - 트랜잭션 커밋시 변경된 entity를 자동으로 DB에 반영
 트랜잭션 관리 - 트랜잭션과 함께 동작 -> 트랜잭션 시작시 생성되고, 커밋되거나 롤백시 종료됨
 ```
+* Spring Data JPA는 entity의 ID를 기준으로 새로운 entity인지 <br/>
+ 기존 entity인지 자동으로 구분하여 DB에 반영함  <br/>
+ -> save()는 새로운 entity일 경우 persist(), 기존 entity일 경우 merge() 
 
 ## JPA Lifecycle callback annotation
 entity의 생명 주기 동안 특정 이벤트가 발생할 때 자동으로 호출되는 메서드를 정의하는 어노테이션 <br/>
