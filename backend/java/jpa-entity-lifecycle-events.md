@@ -33,9 +33,9 @@ entity의 생명 주기 동안 특정 이벤트가 발생할 때 자동으로 �
 - @PostLoad - entity가 Load된 후 호출 (find, 조회된 후 호출)
 
 ex) entity 저장 전 생성시간, 업데이트 시간 컬럼을 현재로 설정 <br/>
-entity 상태 변경과 관련된 내부로직을 처리하는 것이므로 외부에서 호출 할 필요가 없음 <br/>
--> private, protected로 접근제어자 설정, public 설정시 의도치 않은 업데이트 발생 가능 <br/>
-entity를 상속하여 사용하는 경우에는 protected 사용
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entity 상태 변경과 관련된 내부로직을 처리하는 것이므로 외부에서 호출 할 필요가 없음 <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> private, protected로 접근제어자 설정, public 설정시 의도치 않은 업데이트 발생 가능 <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entity를 상속하여 사용하는 경우에는 protected 사용
 
 ```xml
     @PrePersist
