@@ -24,10 +24,10 @@ ex) home화면에서 보여 줄 체중 가져오는 코드
    float weight = (weightEntity != null) ? weightEntity.getWeight() :
                   (latestWeightEntity != null) ? latestWeightEntity.getWeight() : userProfileWeight ;
 ```
-<br/>
- - 삼항 연산자는 값을 반환하거나 변수를 할당할 때 사용 -> void 메서드에는 부적합 <br/><br/>
-  ex) parameter bodyFat이 null 일 때 기존 entity의 bodyFat값 설정하고, <br/>
-        parameter 존재시 받아온 bodyFat 값 설정하는데 set 메서드는 사용 하지 않음<br/>
+
+#### * 삼항 연산자는 값을 반환하거나 변수를 할당할 때 사용 -> void 메서드에는 부적합 
+ex) parameter bodyFat이 null 일 때 기존 entity의 bodyFat값 설정하고, <br/>
+  parameter 존재시 받아온 bodyFat 값 설정하는데 set 메서드는 사용 하지 않음
 
   <br/> -> set 메서드에 사용 불가능 <br/>
   ```xml
