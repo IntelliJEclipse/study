@@ -21,29 +21,27 @@
 - 메서드를 참조해서 매개 변수의 정보 및 리턴 타입을 알아내어, 람다식에서 불필요한 매개 변수를 제거
 
 #### * 메서드 참조 종류
-    - 정적 메서드 참조 - 클래스::메서드 클래스 안에 작성된 사용자 정의 메서드나, 자바의 표준 라이브러리에 포함된 정적 메서드를 모두 포함하여 참조
-    람다식 : list.forEach(item -> System.out.println(item)); item을 매개변수로 하는 람다식
-    메서드참조 : list.forEach(System.out::println); System.out 객체의 println 메서드를 참조 ClassName::methodName
+|정적 메서드 참조 (ClassName::methodName)|
+|---------|
+|클래스 안에 작성된 사용자 정의 메서드나, 자바의 표준 라이브러리에 포함된 정적 메서드를 모두 포함하여 참조|
+|람다식 : list.forEach(item -> System.out.println(item)); item을 매개변수로 하는 람다식<br/> 메서드참조 : list.forEach(System.out::println); System.out 객체의 println 메서드를 참조 |
 
--인스턴스 메서드 참조 
-     String prefix = "Fruit: ";
-    특정 객체 메서드 : 특정 객체의 메서드를 참조하여 호출 instance::methodName
-list.forEach(prefix::concat);
-    람다식 : list.forEach(item -> item -> prefix.concat(item));
+|인스턴스 메서드 참조|
+|---------|
+|`특정 객체 메서드` : 특정 객체의 메서드를 참조하여 호출 (instance::methodName) <br/> 람다식 : list.forEach(item -> prefix.concat(item)); <br/> 메서드참조 : list.forEach(prefix::concat);|
+|`임의 객체 메서드` : 객체가 아닌 클래스의 메서드를 호출 ClassName::instanceMethod <br/> 람다식 : list.forEach(item -> item.toUpperCase()); <br/> 메서드참조 : list.forEach(String::toUpperCase);|
 
-     임의객체의 메서드 : 객체가 아닌 클래스의 메서드를 호출 ClassName::instanceMethod
- list.forEach(String::toUpperCase);
-     람다식 : list.forEach(item -> item.toUpperCase());
+|생성자 참조 (ClassName::new)|
+|---------|
+|클래스의 생성자를 참조하여 객체를 생성|
+|람다식 : list.stream().map(item -> new String(item)).collect(Collectors.toList());<br/> 메서드참조 : list.stream().map(String::new).collect(Collectors.toList());|
 
--생성자 참조 : 클래스의 생성자를 참조하여 객체를 생성 ClassName::new
-list.stream().map(String::new).collect(Collectors.toList());
-     람다식 : list.stream().map(item -> new String(item)).collect(Collectors.toList());
-
-
-ex) 
-인스턴스 메서드 참조
+```xml
+ex) 인스턴스 메서드 참조
  FunctionalFoodIntakeEntity functionalFoodIntakeEntity = new FunctionalFoodIntakeEntity();
-                        functionalFoodEntity.ifPresent(functionalFoodIntakeEntity::setFunctionalFood);
-
-특정 객체 메서드 참조 - 여기서 this는 이 클래스, 즉 functionalFoodService를 뜻한다. 
+ functionalFoodEntity.ifPresent(functionalFoodIntakeEntity::setFunctionalFood);
+```
+```xml
+ex)  특정 객체 메서드 참조 - 여기서 this는 이 클래스, 즉 functionalFoodService를 뜻한다.
 .forEach(this::deleteFunctionalFoodRecord);
+```
