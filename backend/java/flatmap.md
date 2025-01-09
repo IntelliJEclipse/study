@@ -64,8 +64,7 @@ ex) intake list에 식품 추가 후 getFunctionalFoodRecordList 메서드에서
   {   [breakfast,lunch,dinner],         [breakfast],                 [breakfast,dinner]...} 
 
   flatMap 사용시 하나의 평평한 스트림으로 반환
-  [breakfast,lunch,dinner,breakfast,breakfast,dinner] 단일
-  
+  [breakfast,lunch,dinner,breakfast,breakfast,dinner] 
  ```
 
 -> 어떻게 entitiy의 정보가 각 entity에 setting 되는가?
