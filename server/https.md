@@ -1,4 +1,4 @@
-## Https (HyperText Transfer Protocol Secure )
+## HTTPS (HyperText Transfer Protocol Secure )
 
 - 인터넷에서 안전하게 데이터를 전송하기 위해 사용하는 프로토콜 (HTTP의 보안 버전)
 - 웹사이트와 사용자의 브라우저 사이의 통신이 암호화 -> 데이터가 제3자에 의해 가로채지거나 변조되지 않도록 보호
