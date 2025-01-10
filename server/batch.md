@@ -69,9 +69,8 @@
    가상환경 활성화 (source /home/ubuntu/myenv/bin/activate)
         |
    Crontab 설정 전 Python 파일 실행되는지 확인
-   -> 
-
-
+   -> 실행이 안돼서 확인해보니 실행권한이 없었음
+   -> chmod +x /home/ubuntu/purewithme/functional_food_update.py
 ```
 
 ```
@@ -85,6 +84,9 @@
         logging.basicConfig(filename='/home/ubuntu/functional_food_update.log', level=logging.INFO)
         logging.info (f"업데이트 날짜 : {today_date}, 업데이트 데이터 수 : {total_inserted}")
         -> 로그파일 없다면 생성하여 저장함
+
+      * syslog (system log) : 시스템의 활동과 관련된 정보 저장. 크론작업이 실제로 실행되었는지 확인 가능
+        -> 파일 열어보거나 grep CRON /var/log/syslog에서 크론 관련 로그 확인 
 ```
 
 
