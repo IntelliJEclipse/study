@@ -56,7 +56,7 @@
 
   -> user에서 Id는 sequence로 post가 userId라는 이름으로 참조하고 있다 (FK로 설정) <br>
   -> ON DELETE SET NULL을 설정하여 user 삭제 시 post 테이블의 userId가 NULL로 바뀜 <br>
-  -> nickname은 연관관계 없기에 trigger를 설정하여 "탈퇴한 회원"으로 update 해줌
+  -> nickname은 연관관계 없기에 trigger를 설정하여 "탈퇴한 회원"으로 update 해줌 <br>
   -> 트리거가 트리거 함수를 호출
      ```
      * 트리거 함수
