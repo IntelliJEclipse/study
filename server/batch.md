@@ -28,7 +28,7 @@
   비교적 단순한 작업이므로 Python 스크립트를 작성하고 Crontab에 특정 시간에 실행되도록 설정함
 
  ```
-  Crontab 설정
+  * Crontab 설정
     - 프로그램 실행 중인 ubuntu 서버에 crontab 설정
     - crontab -e  크론탭 설정 파일을 열어 편집 ctrl + o -> enter -> ctrl + x 
     - crontab -l  크론탭에 설정된 모든 크론 작업 목록을 표시
@@ -50,5 +50,41 @@
       L : 마지막 (예: 일 필드에서 L은 마지막 날을 의미)
       -> Quartz는 초(second)를 포함해 6개의 필드로 확장된 표현식을 사용 -> 정교한 스케줄링        
 
-      ex) 0 0 * * * 매일 자정에 실행                               
+      ex) 0 0 * * * 매일 자정에 실행  
+
+          0 0 * * * /usr/bin/python3 /home/ubuntu/purewithme/functional_food_update.py
+          -> 크론 작업에서 Python 스크립트를 실행하려면 Python 인터프리터를 명시적으로 지정해야 함
+             (Python이 설치된 경로를 정확히 명시)
 ```
+```
+ * Python 설치
+   - Python 인터프리터는 전역 환경 or 가상 환경에 설치 할 수 있다
+   - 전역 환경(global environment)에 설치
+     시스템 전체에서 사용할 수 있지만, 다른 프로젝트들과 의존성 충돌 문제가 발생할 수 있음.
+   - 가상 환경(virtual environment)에 설치
+     각 프로젝트마다 독립된 환경을 제공하여 의존성 충돌을 방지함
+
+   가상환경 생성 (python3 -m venv - 명령어를 실행한 위치에 가상환경 생성 ~/myenv )
+        |
+   가상환경 활성화 (source /home/ubuntu/myenv/bin/activate)
+        |
+   Crontab 설정 전 Python 파일 실행되는지 확인
+   -> 
+
+
+```
+
+```
+  - 로그 기록 남기기
+      1. Crontab에 설정시
+        05 15 * * * /bin/bash -c 'source /home/ubuntu/myenv/bin/activate && /home/ubuntu/myenv/bin/python /home/ubuntu/purewithme/functional_food_update.py >> /home/ubuntu/functional_food_update.log 2>&1'
+            시간    /      셸 선택       /          가상환경 활성화           /        인터프리터 지정       /                  파이썬 파일 실행                  -> 실행결과를 log 파일에 기록
+
+      2. Python 스크립트에 logging 모듈을 사용하여 설정시
+        import logging 
+        logging.basicConfig(filename='/home/ubuntu/functional_food_update.log', level=logging.INFO)
+        logging.info (f"업데이트 날짜 : {today_date}, 업데이트 데이터 수 : {total_inserted}")
+        -> 로그파일 없다면 생성하여 저장함
+```
+
+
