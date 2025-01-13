@@ -17,8 +17,8 @@
 ```
   Let's Encrypt : 무료로 SSL/TLS 인증서를 발급해주는 인증 기관(Certificate Authority)
   Certbot : Let's Encrypt에서 제공하는 인증서를 발급받고 설치하는데 사용하는 도구. 인증서 발급 및 갱신 과정이 자동화  
-  인증서는 90일 동안 유효하고 30일 남으면 자동 갱신
-  -> sudo systemctl list-timers하면 certbot.timer 등록되어 있음
+            인증서는 90일 동안 유효하고 30일 남으면 자동 갱신
+            -> sudo systemctl list-timers하면 certbot.timer 등록되어 있음
 ```
 - ubuntu 서버에 Certbot 설치
 - sudo apt install certbot python3-certbot-nginx
