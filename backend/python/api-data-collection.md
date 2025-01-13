@@ -60,8 +60,8 @@
                    -> 이를 막기 위해 WHERE NOT EXISTS 절을 사용하고 statement_no를 unique key로 설정하여 db에 statement_no 같은 값 없는 경우에만 업데이트 되도록 함. 
   ```
 
- - `if __name__ == "__main__"` : 해당 파이썬 파일이 직접 실행 될 때 실행되는 코드<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                                                          import 해서 사용시 실행되지 않음 - module로 사용 시 불필요한 코드실행을 막기 위함       
+- `if __name__ == "__main__"` : 해당 파이썬 파일이 직접 실행 될 때 실행되는 코드
+    - import 해서 사용시 실행되지 않음 - module로 사용 시 불필요한 코드실행을 막기 위함       
 - `__name__` :  파이썬의 내장변수, 어떻게 실행되고 있는지에 따라 다른 값을 가짐 
     - 직접실행시 __name__ == "__main__"
     - 다른 파일에서 import 시 __name__ =="파이썬 파일이름"
