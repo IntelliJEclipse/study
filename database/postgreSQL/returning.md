@@ -13,4 +13,13 @@
       WHEN users.email = EXCLUDED.email THEN 'update'
       ELSE 'insert'
     END AS operation;
+
+  row = cursor.fetchone()
+  if row['operation'] == 'insert':
+   total_inserted += 1
+  elif row['operation'] == 'update':
+   total_updated += 1
+  
+  print(f"inserted : {total_inserted}, updated : {total_updated}")
+
 ```
