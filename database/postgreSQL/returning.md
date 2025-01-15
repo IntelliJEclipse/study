@@ -7,7 +7,8 @@
   INSERT INTO users (email, nickname) 
   VALUES ('abc@test.com', 'hihi') 
   ON CONFLICT (email) 
-  DO UPDATE SET nickname = EXCLUDED.nickname 
+  DO UPDATE SET nickname = EXCLUDED.nickname
+  WHERE nickname IS DISTINCT FROM EXCLUDED.nickname
   RETURNING 
     CASE
       WHEN users.email = EXCLUDED.email THEN 'update'
